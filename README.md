@@ -1,6 +1,6 @@
 # Nakba - Advanced MoTW Bypass Framework
 
-![Nakba Banner](screenshots/banner.png)
+![Nakba Banner](screenshots/logo.png)
 
 ## Overview
 
@@ -18,16 +18,13 @@ Nakba is a sophisticated Mark-of-the-Web (MoTW) bypass framework designed for au
 ## Screenshots
 
 ### Main Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](screenshots/screen1.png)
 
 ### Payload Upload Interface
-![Upload Interface](screenshots/upload.png)
+![Upload Interface](screenshots/screen2.png)
 
 ### Command Retrieval
-![Command Retrieval](screenshots/commands.png)
-
-### MoTW Information
-![MoTW Info](screenshots/motw-info.png)
+![Command Retrieval](screenshots/screen3.png)
 
 ## Installation
 
@@ -41,8 +38,8 @@ Nakba is a sophisticated Mark-of-the-Web (MoTW) bypass framework designed for au
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/nakba.git
-   cd nakba
+   git clone https://github.com/ydy4/Nakba.git
+   cd Nakba
    ```
 
 2. **Install dependencies**
@@ -61,7 +58,7 @@ Nakba is a sophisticated Mark-of-the-Web (MoTW) bypass framework designed for au
 
 1. **Navigate to the project directory**
    ```bash
-   cd nakba
+   cd Nakba
    ```
 
 2. **Run the server**
