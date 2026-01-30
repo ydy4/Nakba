@@ -1,10 +1,12 @@
-Nakba
+# Nakba
 
-Mark-of-the-Web (MoTW) Bypass as a Service
+*Mark-of-the-Web (MoTW) Bypass as a Service*
 
-PythonFlaskLicenseStars
+[![Python](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
+[![Flask](https://img.shields.io/badge/Framework-Flask-green.svg)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Stars](https://img.shields.io/github/stars/ydy4/Nakba.svg?style=social&label=Star)](https://github.com/ydy4/Nakba)
 
-The silent weapon for Red Teamers: Deliver payloads without the mark of death.
 📖 Table of Contents
 
     Background: The Mark-of-the-Web (MoTW)
