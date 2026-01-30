@@ -9,7 +9,7 @@
 
 > The silent weapon for Red Teamers: Deliver payloads without the mark of death.
 
-## 📖 Table of Contents
+## Table of Contents
 - [Background: The Mark-of-the-Web (MoTW)](#background-the-mark-of-the-web-motw)
 - [The Problem for Red Teams](#the-problem-for-red-teams)
 - [The Solution: Nakba](#the-solution-nakba)
@@ -68,27 +68,34 @@ When a browser (Chrome, Edge, Firefox) renders a resource, it stores the file in
 
 ## Key Features
 
-✅ **Complete MoTW Evasion**
-
+**Complete MoTW Evasion**  
 Payloads delivered via Nakba have no Zone.Identifier. They run as if they were created locally, instantly bypassing SmartScreen warnings.
 
-🕵️‍♂️ **Stealth Delivery**
-
+**Stealth Delivery**  
 - No suspicious ISO or ZIP attachments.
 - No social engineering required to "Click 'Enable Editing'".
 - Uses standard browser traffic (HTTPS), blending in with normal web surfing.
 
-🎯 **Targeted Retrieval**
-
+**Targeted Retrieval**  
 Each payload is embedded with a unique signature. Retrieval commands scan the cache specifically for this marker, ensuring you grab the correct file even among thousands of cached assets.
 
-🌐 **Cross-Browser Support**
-
+**Cross-Browser Support**  
 Optimized for Chromium-based browsers (Chrome, Edge, Brave) and Firefox.
 
-🛡️ **OpSec Safe**
-
+**OpSec Safe**  
 The server-side code obfuscates the signature in the HTML to prevent findstr or EDR scanners from flagging the delivery page itself as a threat.
+
+## Application Interface
+
+![Main Page with Drag and Drop Interface](screenshots/top-page-drag-drop-file.png)
+
+After uploading your payload, you'll receive a unique link:
+
+![Generated Link for MoTW Bypass](screenshots/generated-link-for-motw.png)
+
+Commands to find the files in the browser cache:
+
+![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
 
 ## Installation
 
@@ -158,7 +165,7 @@ Defenders can detect Nakba usage by monitoring for the following:
 
 This tool is intended for educational purposes and authorized security testing only. Using Nakba to bypass security controls on systems you do not own or have explicit permission to test is illegal. The authors assume no responsibility for misuse of this software.
 
-## 🌟 Star the Repo
+## Star the Repo
 
 If you find this tool useful for your Red Team operations, please consider giving it a star on GitHub!
 
