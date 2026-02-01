@@ -6,7 +6,9 @@
 [![Flask](https://img.shields.io/badge/Framework-Flask-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/ydy4/Nakba.svg?style=social&label=Star)](https://github.com/ydy4/Nakba)
-![Main Page with Drag and Drop Interface](screenshots/logo.png)
+<p align="center">
+ <img src="screenshots/logo.png" alt="FLARE-VM Logo" width="600">
+</p>
 > The silent weapon for Red Teamers: Deliver payloads without the mark of death.
 
 ## Table of Contents
