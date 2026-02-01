@@ -6,7 +6,7 @@
 [![Flask](https://img.shields.io/badge/Framework-Flask-green.svg)](https://flask.palletsprojects.com/)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Stars](https://img.shields.io/github/stars/ydy4/Nakba.svg?style=social&label=Star)](https://github.com/ydy4/Nakba)
-
+![Main Page with Drag and Drop Interface](screenshots/logo.png)
 > The silent weapon for Red Teamers: Deliver payloads without the mark of death.
 
 ## Table of Contents
@@ -96,6 +96,11 @@ After uploading your payload, you'll receive a unique link:
 Commands to find the files in the browser cache:
 
 ![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
+
+<video width="640" height="360" controls>
+  <source src="screenshots/bypass-motw-macro-excel.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Installation
 
