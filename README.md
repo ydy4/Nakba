@@ -1,5 +1,4 @@
 # Nakba
-
 *Mark-of-the-Web (MoTW) Bypass as a Service*
 
 [![Python](https://img.shields.io/badge/Language-Python-blue.svg)](https://www.python.org/)
@@ -100,7 +99,7 @@ Commands to find the files in the browser cache:
 ![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
 
 <video width="640" height="360" controls>
-  <source src="screenshots/bypass-motw-macro-excel.mp4" type="video/mp4">
+  <source src="https://youtu.be/uVZUhc6vmB0" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
