@@ -97,17 +97,15 @@ After uploading your payload, you'll receive a unique link:
 Commands to find the files in the browser cache:
 
 ![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
+## 📹 Video Demonstration
 
-## Video Demonstration
-
-Here's a video demonstration showing how the MoTW bypass works with Excel macros:
-
-<video width="800" controls>
-  <source src="https://github.com/ydy4/Nakba/raw/refs/heads/master/screenshots/bypass-motw-macro-excel.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+### Full Video Walkthrough
 [![Watch the video](https://img.youtube.com/vi/uVZUhc6vmB0/0.jpg)](https://www.youtube.com/watch?v=uVZUhc6vmB0)
+
+### Quick GIF Preview
 ![Demo](./screenshots/bypass-motw-macro-excel-ezgif.com-video-to-gif-converter.gif)
+
+---
 
 ## Installation
 
