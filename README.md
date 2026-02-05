@@ -98,7 +98,14 @@ Commands to find the files in the browser cache:
 
 ![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
 
-https://github.com/ydy4/Nakba/raw/refs/heads/master/screenshots/bypass-motw-macro-excel.mp4
+## Video Demonstration
+
+Here's a video demonstration showing how the MoTW bypass works with Excel macros:
+
+<video width="800" controls>
+  <source src="https://github.com/ydy4/Nakba/raw/refs/heads/master/screenshots/bypass-motw-macro-excel.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 ## Installation
 
