@@ -106,6 +106,7 @@ Here's a video demonstration showing how the MoTW bypass works with Excel macros
   <source src="https://github.com/ydy4/Nakba/raw/refs/heads/master/screenshots/bypass-motw-macro-excel.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
+[![Watch the video](https://img.youtube.com/vi/uVZUhc6vmB0/0.jpg)](https://www.youtube.com/watch?v=uVZUhc6vmB0)
 
 ## Installation
 
