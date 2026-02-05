@@ -107,6 +107,7 @@ Here's a video demonstration showing how the MoTW bypass works with Excel macros
   Your browser does not support the video tag.
 </video>
 [![Watch the video](https://img.youtube.com/vi/uVZUhc6vmB0/0.jpg)](https://www.youtube.com/watch?v=uVZUhc6vmB0)
+![Demo](./screenshots/bypass-motw-macro-excel-ezgif.com-video-to-gif-converter.gif)
 
 ## Installation
 
