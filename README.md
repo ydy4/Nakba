@@ -10,6 +10,9 @@
 </p>
 > The silent weapon for Red Teamers: Deliver payloads without the mark of death.
 
+### Quick GIF Preview
+![Demo](./screenshots/bypass-motw-macro-excel-ezgif.com-video-to-gif-converter.gif)
+
 ## Table of Contents
 - [Background: The Mark-of-the-Web (MoTW)](#background-the-mark-of-the-web-motw)
 - [The Problem for Red Teams](#the-problem-for-red-teams)
@@ -97,13 +100,7 @@ After uploading your payload, you'll receive a unique link:
 Commands to find the files in the browser cache:
 
 ![Web Commands to Find Files](screenshots/web-commands-to-find-the-files.png)
-## 📹 Video Demonstration
 
-### Full Video Walkthrough
-[![Watch the video](https://img.youtube.com/vi/uVZUhc6vmB0/0.jpg)](https://www.youtube.com/watch?v=uVZUhc6vmB0)
-
-### Quick GIF Preview
-![Demo](./screenshots/bypass-motw-macro-excel-ezgif.com-video-to-gif-converter.gif)
 
 ---
 
